@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+ web:
+   build: .
+   container_name: web_maratona
+   #command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+   restart: always
+   tty: true
+   volumes:
+     - .:/app
+   ports:
+     - "8000:8000"
+   networks:
+     - app-network
+
+networks:
+ app-network:
+   driver: bridge
+
