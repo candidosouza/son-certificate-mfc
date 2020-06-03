@@ -6,7 +6,15 @@
 </head>
 <body>
 
-<h1>Okay</h1>
+<div class="content">
+    <div class="container">
+        <form action="/" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Download">
+        </form>
+    </div>
+</div>
 
 </body>
 </html>
